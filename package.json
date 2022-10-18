@@ -1,0 +1,51 @@
+{
+  "name": "react-use-scroll-navgiate",
+  "version": "1.0.0",
+  "description": "A react hook to scroll to the top of the page when navigate to another one",
+  "main": "cjs/index.js",
+  "module": "esm/index.js",
+  "scripts": {
+    "build": "rollup -c",
+    "release": "standard-version",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "publish": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Alexandrebdry/react-use-scroll-navigate"
+  },
+  "keywords": [
+    "react",
+    "scroll",
+    "navigate",
+    "hook",
+    "use",
+    "react-hook",
+    "react-scroll",
+    "react-navigate",
+    "react-hook-scroll",
+    "react-hook-navigate",
+    "react-scroll-navigate",
+    "react-scroll-hook",
+    "react-navigate-hook",
+    "react-scroll-navigate-hook"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.19.3",
+    "@babel/preset-env": "^7.19.3",
+    "react": "^18.2.0",
+    "react-router-dom": "^6.4.2",
+    "react-test-renderer": "^18.2.0",
+    "rollup": "^2.79.1",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-commonjs": "^19.0.2",
+    "@rollup/plugin-replace": "^3.1.0",
+    "standard-version": "^9.5.0"
+  },
+  "peerDependencies": {
+    "react-router-dom": "^6.4.2"
+  },
+  "author": "Alexandre BAUDRY",
+  "license": "MIT ",
+  "types": "./esm/index.js"
+}
