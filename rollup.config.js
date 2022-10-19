@@ -4,10 +4,10 @@ import commonjs from "@rollup/plugin-commonjs";
 
 
 export default {
-    input: './src/index.js',
+    input: './src/index.jsx',
     output: [
         {
-            file: 'cjs/index.js',
+            file: 'cjs/index.jsx',
             format: 'cjs',
             name:"useScrollNavigate",
             globals: {

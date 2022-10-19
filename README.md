@@ -7,19 +7,70 @@ npm install react-use-scroll-navigate
 ```
 
 ## Usage
+### useScrollNavigate
 ```jsx
 import useScrollNavigate from 'react-use-scroll-navigate';
 
 const App = () => {
-  
-  const navgiate = useScrollNavigate();
+
+    const { scrollNavigateError, scrollNavigate } = useScrollNavigate();
   
   return (
     <div>
-        <button onClick={ ()=> {navgiate('/') } )}>Go to homepage</button> 
+        <button onClick={ ()=> { 
+            scrollNavigate('/'); //It will navigate & scroll to the top ! 
+        }}>
+            Go to homepage!
+        </button> 
     </div>
   );
 };
+```
+
+### NavigationRef
+```jsx
+
+//Main app 
+
+createRoot(document.getElementById("root")).render(
+    <StrictMode>
+        <BrowserRouter>
+            <NavigateContextProvider> {/*Ref navigation scroll navigation works with context*/}
+                <App /> {/*here is the rooter */}
+            </NavigateContextProvider>
+        </BrowserRouter>
+    </StrictMode>
+)
+
+```
+```jsx
+
+//On one page
+
+export default () => {
+    const { navigateToRef } = useNavigateContext();
+
+    return (
+        <Fragment>
+            <h1>About</h1>
+            <button onClick={() => navigateToRef("/")}>Home</button>
+        </Fragment>
+    )
+}
+```
+
+```jsx
+// On another page
+export default () => {
+    const { navigationRef } = useNavigateContext();
+
+    return (
+        <Fragment>
+            <h1>Home</h1>
+            <div ref={navigationRef} />
+        </Fragment>
+    )
+}
 ```
 
 ## License
@@ -33,3 +84,4 @@ For major changes, please open an issue first to discuss what you would like to 
 
 ## Authors and acknowledgment
 - [Alexandre BAUDRY](https://github.com/Alexandrebdry)
+- [Amin NAIRI](https://github.com/aminnairi)
