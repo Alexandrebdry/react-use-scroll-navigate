@@ -1,4 +1,7 @@
 import {useNavigate} from "react-router-dom";
+import UseScrollNavigatePathError from "./errors/useScrollNavigatePathError";
+import UseScrollNavigateCoordinateError from "./errors/useScrollNavigateCoordinateError";
+
 
 /**
  *
@@ -12,18 +15,21 @@ import {useNavigate} from "react-router-dom";
 export default function useScrollNavigate(path, scrollX = 0 , scrollY = 0  ) {
 
     if (typeof scrollX !== "number" || typeof scrollY !== "number") {
-        throw new Error("scrollX and scrollY must be numbers");
+        throw new UseScrollNavigateCoordinateError("scrollX and scrollY must be numbers");
     }
     if (typeof path !== "string") {
-        throw new Error("path must be a string");
+        throw new UseScrollNavigatePathError("path must be a string") ;
     }
     if(path === ""){
-        throw new Error("path must not be empty");
+        throw new UseScrollNavigatePathError("path must not be empty");
     }
 
     const navigate = useNavigate();
     return () => {
-        window.scrollTo(scrollX, scrollY);
+        window.scroll({left: scrollX, top: scrollY, behavior: "smooth" });
         navigate(path);
     }
 }
+
+
+
