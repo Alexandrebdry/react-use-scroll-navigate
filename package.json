@@ -2,7 +2,7 @@
   "name": "react-use-scroll-navgiate",
   "version": "2.0.0",
   "description": "A react hook to scroll to the top of the page when navigate to another one",
-  "main": "cjs/index.jsx",
+  "main": "cjs/index.js",
   "module": "esm/index.jsx",
   "scripts": {
     "build": "rollup -c",

@@ -6,6 +6,10 @@ yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 
+# IDE dir & files
+.idea
+.idea/
+
 #Builded files
 cjs/
 
