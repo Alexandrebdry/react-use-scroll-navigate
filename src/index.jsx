@@ -34,7 +34,7 @@ export class ScrollNavigateTopError extends Error {
 export function useScrollNavigate(path = "/", top = 0 , left = 0  ) {
 
     const navigate = useNavigate();
-    const [scrollNavigateError, setScrollNavigateError] = useState() ;
+    const [scrollNavigateError, setScrollNavigateError] = useState(null) ;
     const scrollNavigate = useCallback( (path, top, left) => {
        if (typeof path != "string") {
            setScrollNavigateError(new ScrollNavigatePathError("Path is not a string")) ;
@@ -71,7 +71,7 @@ export function useScrollNavigate(path = "/", top = 0 , left = 0  ) {
 export const NavigateContext = createContext();
 export const NavigateContextProvider = ({children}) => {
     const navigate = useNavigate();
-    const [navigationBeacon, setNavigationBeacon] = useState(false) ;
+    const [navigationBeacon, setNavigationBeacon] = useState(null) ;
     const navigationRef = useRef() ;
 
     const navigateToRef = useCallback((path) => {
@@ -81,10 +81,10 @@ export const NavigateContextProvider = ({children}) => {
     },[navigate, setNavigationBeacon]);
 
     const value = useMemo(() => {navigationRef, navigateToRef},
-        [navigationRef,navigateToRef()]);
+        [navigationRef,navigateToRef]);
 
     useLayoutEffect(() => {
-       if (navigationBeacon === false )return
+       if (navigationBeacon === false || navigationBeacon === null )return
        if(navigationRef.current instanceof HTMLElement) {
            const {left,top} = navigationRef.current.getBoundingClientRect();
            window.scroll({left,top,behavior:'smooth'});
