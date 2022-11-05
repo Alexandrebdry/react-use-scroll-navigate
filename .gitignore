@@ -1,6 +1,5 @@
 # built files
-cjs/
-esm/
+dist/
 
 # Logs
 logs
@@ -14,8 +13,6 @@ lerna-debug.log*
 .idea
 .idea/
 
-#Builded files
-cjs/
 
 # package json
 package-lock.json
