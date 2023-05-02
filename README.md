@@ -1,6 +1,10 @@
 # React use scroll navigate
 This is a react hook that allows you to navigate to a specific section of a page by scrolling to it.
 
+## Demo 
+
+[Visit demo page](https://alexandrebdry.vercel.app/react-scroll-navigate)
+
 ## Installation
 ```bash
 npm install react-use-scroll-navigate
